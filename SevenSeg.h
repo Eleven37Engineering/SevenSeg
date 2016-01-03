@@ -1,5 +1,5 @@
-#ifndef SEVENSEG_HPP
-#define SEVENSEG_HPP
+#ifndef SEVENSEG_H
+#define SEVENSEG_H
 
 #include <stdint.h>
 

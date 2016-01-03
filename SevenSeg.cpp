@@ -1,4 +1,4 @@
-#include "SevenSeg.hpp"
+#include "SevenSeg.h"
 
 SevenSeg::SevenSeg()
 {
