@@ -1,4 +1,4 @@
-#include <SevenSeg.hpp>
+#include "SevenSeg.hpp"
 
 SevenSeg::SevenSeg()
 {
@@ -47,11 +47,11 @@ void SevenSeg::setSegments(int number, int digit, int time)
     // Puts 5V to the anode of the segment if the numbers array shows a 1
     if(numbers[number][seg] == 1)
     {
-      digitalWrite(segments[seg], HIGH);
+		digitalWrite(segments[seg], HIGH);
     }
     // Puts 0V to the anode of the segment if the numbers array shows a anything BUT 1, i.e. 0
     else
     {
-      digitalWrite(segments[seg], LOW);
+		digitalWrite(segments[seg], LOW);
     }
 }

@@ -1,3 +1,6 @@
+#ifndef SEVENSEG_HPP
+#define SEVENSEG_HPP
+
 #include <stdint.h>
 
 
@@ -11,4 +14,6 @@ class SevenSeg
 	private:
 		void setup();
 		void setSegments(int number, int digit, int time);
-}
+};
+
+#endif
