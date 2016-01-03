@@ -19,17 +19,6 @@ SevenSeg::SevenSeg()
 	setup();
 }
 
-void SevenSeg::SetDisplay(uint8_t digit1, uint8_t digit2, uint8_t digit3, uint8_t digit4)
-{
-	for(int t = 0; t < 20; t++)
-  {
-    setSegments(digit1, CC1, 50);
-    setSegments(digit2, CC2, 50);
-    setSegments(digit3, CC3, 50);
-    setSegments(digit4, CC4, 50);
-  }  
-}
-
 byte numbers[10][8] = 
 { 
   {1, 1, 1, 1, 1, 1, 0, 0}, // 0
@@ -74,6 +63,8 @@ void SevenSeg::setup()
   digitalWrite(CC4, HIGH);
 }
 
+
+
 void SevenSeg::setSegments(int number, int digit, int time)
 {
 	for(int seg = 0; seg < 8; seg++)
@@ -88,15 +79,27 @@ void SevenSeg::setSegments(int number, int digit, int time)
     {
 		  digitalWrite(segments[seg], LOW);
     }
-    // Sets the voltage to the Common Cathode to 0V(LOW), ie the LEDs that have 5V at the anode, 
-    // the number is diplayed
-    digitalWrite(digit, LOW);
-    // Set the on time, set in Microseconds. Or one millionth of a second. 0.000001
-    delayMicroseconds(time);
-    // Sets the Common Cathode to 5V(High), ie the LEDs are no longer visible.
-    digitalWrite(digit, HIGH);
   }
+  // Sets the voltage to the Common Cathode to 0V(LOW), ie the LEDs that have 5V at the anode, 
+  // the number is diplayed
+  digitalWrite(digit, LOW);
+  // Set the on time, set in Microseconds. Or one millionth of a second. 0.000001
+  delayMicroseconds(time);
+  // Sets the Common Cathode to 5V(High), ie the LEDs are no longer visible.
+  digitalWrite(digit, HIGH);
 }
+
+void SevenSeg::SetDisplay(uint8_t digit1, uint8_t digit2, uint8_t digit3, uint8_t digit4, uint32_t time)
+{
+  time *= time*1000;
+  uint32_t divisor = 128;
+  setSegments(digit1, CC1, (uint32_t)(time/divisor)); 
+  setSegments(digit2, CC2, (uint32_t)(time/divisor)); 
+  setSegments(digit3, CC3, (uint32_t)(time/divisor)); 
+  setSegments(digit4, CC4, (uint32_t)(time/divisor)); 
+}
+
+
 
 
 
