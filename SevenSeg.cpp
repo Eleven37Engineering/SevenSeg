@@ -125,13 +125,10 @@ void SevenSeg::SetDisplay(uint8_t digit1, uint8_t digit2, uint8_t digit3, uint8_
 
 void SevenSeg::SetDisplay(char* value, uint32_t time)
 {
-  String string = value;
-  string.toUpperCase();
-  value = string;
-  uint32_t digit1 = value[0] - 48;
-  uint32_t digit2 = value[1] - 48;
-  uint32_t digit3 = value[2] - 48;
-  uint32_t digit4 = value[3] - 48;
+  uint32_t digit1 = (value[0] & 0x20) - 48;
+  uint32_t digit2 = (value[1] & 0x20) - 48;
+  uint32_t digit3 = (value[2] & 0x20) - 48;
+  uint32_t digit4 = (value[3] & 0x20) - 48;
 
   if(digit1 > 10)
   {
