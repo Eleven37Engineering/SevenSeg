@@ -9,6 +9,7 @@ class SevenSeg
 	public:
 		SevenSeg();
 		void SetDisplay(uint8_t digit1, uint8_t digit2, uint8_t digit3, uint8_t digit4, uint32_t time);
+		void SetDisplay(char* value, uint32_t time);
 
 
 	private:

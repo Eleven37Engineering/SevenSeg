@@ -19,18 +19,44 @@ SevenSeg::SevenSeg()
 	setup();
 }
 
-byte numbers[10][8] = 
+byte numbers[36][7] = 
 { 
-  {1, 1, 1, 1, 1, 1, 0, 0}, // 0
-  {0, 1, 1, 0, 0, 0, 0, 0}, // 1
-  {1, 1, 0, 1, 1, 0, 1, 0}, // 2
-  {1, 1, 1, 1, 0, 0, 1, 0}, // 3
-  {0, 1, 1, 0, 0, 1, 1, 0}, // 4
-  {1, 0, 1, 1, 0, 1, 1, 0}, // 5
-  {1, 0, 1, 1, 1, 1, 1, 0}, // 6
-  {1, 1, 1, 0, 0, 0, 0, 0}, // 7
-  {1, 1, 1, 1, 1, 1, 1, 0}, // 8
-  {1, 1, 1, 0, 0, 1, 1, 0}  // 9 
+  {1, 1, 1, 1, 1, 1, 0}, // 0
+  {0, 1, 1, 0, 0, 0, 0}, // 1
+  {1, 1, 0, 1, 1, 0, 1}, // 2
+  {1, 1, 1, 1, 0, 0, 1}, // 3
+  {0, 1, 1, 0, 0, 1, 1}, // 4
+  {1, 0, 1, 1, 0, 1, 1}, // 5
+  {1, 0, 1, 1, 1, 1, 1}, // 6
+  {1, 1, 1, 0, 0, 0, 0}, // 7
+  {1, 1, 1, 1, 1, 1, 1}, // 8
+  {1, 1, 1, 0, 0, 1, 1}, // 9 
+  {1, 1, 1, 0, 1, 1, 1}, // A
+  {1, 1, 1, 1, 1, 1, 1}, // B
+  {1, 0, 0, 1, 1, 1, 0}, // C
+  {1, 1, 1, 1, 1, 1, 0}, // D
+  {1, 0, 0, 1, 1, 1, 1}, // E
+  {1, 0, 0, 0, 1, 1, 1}, // F
+  {1, 0, 1, 1, 1, 1, 1}, // G
+  {0, 1, 1, 0 ,1, 1, 1}, // H
+  {0, 1, 1, 0, 0, 0, 0}, // I
+  {0, 1, 1, 1, 1, 0, 0}, // J
+  {0, 1, 1, 0, 1, 1, 1}, // K
+  {0, 0, 0, 1, 1, 1, 0}, // L
+  {0, 1, 1, 0, 1, 1, 1}, // M
+  {0, 1, 1, 0, 1, 1, 1}, // N
+  {1, 1, 1, 1, 1, 1, 0}, // O
+  {1, 1, 0, 0, 1, 1, 1}, // P
+  {1, 1, 1, 1, 1, 1, 0}, // Q
+  {1, 1, 1, 0, 1, 1, 1}, // R 
+  {1, 0, 1, 1, 0, 1, 1}, // S
+  {0, 1, 1, 0, 0, 0, 1}, // T
+  {0, 1, 1, 1, 1, 1, 0}, // U
+  {0, 1, 1, 1, 1, 1, 0}, // V
+  {0, 1, 1, 1, 1, 1, 0}, // W
+  {0, 1, 1, 0 ,1, 1, 1}, // X
+  {0, 1, 1, 1, 0, 0, 1}, // Y
+  {1, 1, 0, 1, 1, 0, 1}  // Z
 };
 
 const int segments[8] = {A, B, C, D, E, F, G};
@@ -91,15 +117,16 @@ void SevenSeg::setSegments(int number, int digit, int time)
 
 void SevenSeg::SetDisplay(uint8_t digit1, uint8_t digit2, uint8_t digit3, uint8_t digit4, uint32_t time)
 {
-  time *= time*1000;
-  uint32_t divisor = 128;
-  setSegments(digit1, CC1, (uint32_t)(time/divisor)); 
-  setSegments(digit2, CC2, (uint32_t)(time/divisor)); 
-  setSegments(digit3, CC3, (uint32_t)(time/divisor)); 
-  setSegments(digit4, CC4, (uint32_t)(time/divisor)); 
+  setSegments(digit1, CC1, time); 
+  setSegments(digit2, CC2, time); 
+  setSegments(digit3, CC3, time); 
+  setSegments(digit4, CC4, time); 
 }
 
-
+void SevenSeg::SetDisplay(char* value, uint32_t time)
+{
+  this->SetDisplay(value[0] - 55, value[1] - 55, value[2] - 55, value[3] - 55, time);
+}
 
 
 
