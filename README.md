@@ -7,7 +7,9 @@ Use for whatever, no need to give credit, contribute if you see a problem.  Dona
 
 ##Changelog
 0.1.0 - Working implementation with time delay
+
 0.0.2 - Implimentation of library definitions. Includes formatting error fixes from v0.0.1.
+
 0.0.1 - Inital creation of project - includes wiring diagram and old_code example of how the library was built.
 
 
