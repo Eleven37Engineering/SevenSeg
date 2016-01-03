@@ -125,56 +125,40 @@ void SevenSeg::SetDisplay(uint8_t digit1, uint8_t digit2, uint8_t digit3, uint8_
 
 void SevenSeg::SetDisplay(char* value, uint32_t time)
 {
-  uint32_t digit1 = value[0] - 10;
-  uint32_t digit2 = value[1] - 10;
-  uint32_t digit3 = value[2] - 10;
-  uint32_t digit4 = value[3] - 10;
+  uint32_t digit1 = value[0] - 48;
+  uint32_t digit2 = value[1] - 48;
+  uint32_t digit3 = value[2] - 48;
+  uint32_t digit4 = value[3] - 48;
 
-  if(digit1 > 0xF)
+  if(digit1 > 10)
   {
-    if(digit1 > 37 && digit1 < 48)
+    if(digit1 > 16)
     {
-      digit1 = digit1 - 48;
-    }
-    else
-    {
-      digit1 = digit1 - 65;
+      digit1 = digit1 - 7;
     }
   }
 
-  if(digit2 > 0xF)
+  if(digit2 > 10)
   {
-    if(digit2 > 37 && digit2 < 48)
+    if(digit2 > 16)
     {
-      digit2 = digit2 - 48;
-    }
-    else
-    {
-      digit2 = digit2 - 65;
+      digit2 = digit2 - 7;
     }
   }
 
-  if(digit3 > 0xF)
+  if(digit3 > 10)
   {
-    if(digit3 > 37 && digit3 < 48)
+    if(digit3 > 16)
     {
-      digit3 = digit3 - 48;
-    }
-    else
-    {
-      digit3 = digit3 - 65;
+      digit3 = digit3 - 7;
     }
   }
 
-  if(digit4 > 0xF)
+  if(digit4 > 10)
   {
-    if(digit4 > 37 && digit4 < 48)
+    if(digit4 > 16)
     {
-      digit4 = digit4 - 48;
-    }
-    else
-    {
-      digit4 = digit4 - 65;
+      digit4 = digit4 - 7;
     }
   }
 
