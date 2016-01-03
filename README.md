@@ -30,4 +30,4 @@ Then you can set the display like so:
 
 sevenSeg.SetDisplay(1, 2, 3, 4);
 
-Please reference the examples folder implementations of the code, we've tried to build this up to support many examples.
+Please reference the examples folder for implementations of the code, we've tried to build this up to support many examples.
