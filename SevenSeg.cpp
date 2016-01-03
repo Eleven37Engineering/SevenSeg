@@ -96,7 +96,7 @@ void SevenSeg::setSegments(int number, int digit, int time)
 	for(int seg = 0; seg < 8; seg++)
   {
     // Puts 5V to the anode of the segment if the numbers array shows a 1
-    if(numbers[number][seg] == 1)
+    if(displayValues[number][seg] == 1)
     {
 		  digitalWrite(segments[seg], HIGH);
     }
