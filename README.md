@@ -25,9 +25,9 @@ You can also see the Fritzing project under the fritzing folder.
 This is a C++ library written to to operate in an object oriented manner.
 
 Create a **SevenSeg** object and call the **SetDisplay** function, like so:
-'''
+```
 SevenSeg *sevenSeg = new SevenSeg();
 sevenSeg->SetDisplay(1, 2, 3, 4, 1000);
-'''
+```
 
 Please reference the examples folder for implementations of the code, we've tried to build this up to support many examples.
