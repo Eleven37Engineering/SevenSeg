@@ -125,10 +125,10 @@ void SevenSeg::SetDisplay(uint8_t digit1, uint8_t digit2, uint8_t digit3, uint8_
 
 void SevenSeg::SetDisplay(char* value, uint32_t time)
 {
-  uint32_t digit1 = (value[0] - 'a' + 'A') - 48;
-  uint32_t digit2 = (value[1] - 'a' + 'A') - 48;
-  uint32_t digit3 = (value[2] - 'a' + 'A') - 48;
-  uint32_t digit4 = (value[3] - 'a' + 'A') - 48;
+  uint32_t digit1 = toupper(value[0]) - 48;
+  uint32_t digit2 = toupper(value[1]) - 48;
+  uint32_t digit3 = toupper(value[2]) - 48;
+  uint32_t digit4 = toupper(value[3]) - 48;
 
   if(digit1 > 10)
   {
