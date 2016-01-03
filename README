@@ -1,26 +1,21 @@
-Seven Seg
-================
+#Seven Seg
 
 This project is to display characters on a seven segment display in an easy to use manner.
 
 Use for whatever, no need to give credit, contribute if you see a problem.  Donations are a great idea, but we would rather see you develop your own library and evolve the world like we're trying to do.
 
 
-Changelog
----------
+##Changelog
 0.0.1 - Inital creation of project - includes wiring diagram and old_code example of how the library was built.
 
 
-Installation
-------------
-
-- Download the files
-- Insert the source code into new files of the arduino project
-- Add '#include <SevenSeg.h>' in your sketch
+##Installation
+1. Download the files
+2. Insert the source code into new files of the arduino project
+3. Add '#include <SevenSeg.h>' in your sketch
 
 
-Usage
------
+##Usage
 
 This is still in full development for the wiring diagram please see: diagram.jpg
 You can also see the Fritzing project under the fritzing folder.
