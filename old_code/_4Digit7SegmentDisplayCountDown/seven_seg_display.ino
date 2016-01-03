@@ -32,28 +32,7 @@
 #define CC3 12
 #define CC4 13
 
-// Define numberSegments
-// numberSegments is an array to control the number displayed on the 7-Segment display
-
-//byte numberSegments[10]
-//{ 
-//  /* 
-//   *  {A, B, C, D, E, F, G, DP}
-//   */
-//  {1, 1, 1, 1, 1, 1, 0, 0}, // 0
-//  {0, 1, 1, 0, 0, 0, 0, 0}, // 1
-//  {1, 1, 0, 1, 1, 0, 1, 0}, // 2
-//  {1, 1, 1, 1, 0, 0, 1, 0}, // 3
-//  {0, 1, 1, 0, 0, 1, 1, 0}, // 4
-//  {1, 0, 1, 1, 0, 1, 1, 0}, // 5
-//  {1, 0, 1, 1, 1, 1, 1, 0}, // 6
-//  {1, 1, 1, 0, 0, 0, 0, 0}, // 7
-//  {1, 1, 1, 1, 1, 1, 1, 0}, // 8
-//  {1, 1, 1, 0, 0, 1, 1, 0}  // 9
-//}
-
 // Numbers array
-// An array is defined and filled with the 'numberSegments' array defined above.
 // Rows and columns are assigned as follows: numbers[number][segments]
 byte numbers[10][8] = 
 { 
@@ -73,7 +52,7 @@ const int segments[8] = {A, B, C, D, E, F, G, DP};
 
 // Create a function to control the segments of the display
 // Parameter digit is the digit of the display, ie 1-4
-// the parameter time controls how long the segments are turned OFF
+// The parameter time controls how long the segments are turned OFF
 void setSegments(int number, int digit, int time)
 {
   for(int seg = 0; seg < 8; seg++)
@@ -83,7 +62,7 @@ void setSegments(int number, int digit, int time)
     {
       digitalWrite(segments[seg], HIGH);
     }
-    // puts 0V to the anode of the segment if the numbers array shows a 0
+    // Puts 0V to the anode of the segment if the numbers array shows a anything BUT 1, i.e. 0
     else
     {
       digitalWrite(segments[seg], LOW);
@@ -101,7 +80,8 @@ void setSegments(int number, int digit, int time)
 void setup()
 {
   // Set Anodes to Low to ensure segments are off.
-  //Serial.begin(9600);
+  // Serial provided for diagnostics purposes.
+  Serial.begin(9600);
   pinMode(A, OUTPUT);
   digitalWrite(A, LOW);
   pinMode(B, OUTPUT);
