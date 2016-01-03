@@ -6,6 +6,8 @@ Use for whatever, no need to give credit, contribute if you see a problem.  Dona
 
 
 ##Changelog
+0.1.2 - Added support for string input. 
+
 0.1.0 - Working implementation with time delay
 
 0.0.2 - Implimentation of library definitions. Includes formatting error fixes from v0.0.1.
@@ -30,6 +32,12 @@ Create a **SevenSeg** object and call the **SetDisplay** function, like so:
 ```
 SevenSeg *sevenSeg = new SevenSeg();
 sevenSeg->SetDisplay(1, 2, 3, 4, 1000);
+```
+
+To create a **SevenSeg** object and call the **SetDisplay** with a **string** like so:
+```
+SevenSeg *sevenSeg = new SevenSeg();
+sevenSeg->SetDisplay("abcd", 1000);
 ```
 
 Please reference the examples folder for implementations of the code, we've tried to build this up to support many examples.
