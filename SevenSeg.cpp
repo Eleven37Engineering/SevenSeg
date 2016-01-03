@@ -1,4 +1,18 @@
 #include "SevenSeg.h"
+#include "Arduino.h"
+
+#define A 2
+#define B 3
+#define C 4
+#define D 5
+#define E 6
+#define F 7
+#define G 8
+
+#define CC1 10
+#define CC2 11
+#define CC3 12
+#define CC4 13
 
 SevenSeg::SevenSeg()
 {
@@ -24,6 +38,8 @@ const byte numbers[10][8] =
   {1, 1, 1, 0, 0, 1, 1, 0}  // 9 
 };
 
+const int segments[8] = {A, B, C, D, E, F, G};
+
 void SevenSeg::setup()
 {
 	pinMode(A, OUTPUT);
@@ -40,8 +56,6 @@ void SevenSeg::setup()
   digitalWrite(F, LOW);
   pinMode(G, OUTPUT);
   digitalWrite(G, LOW);
-  pinMode(DP, OUTPUT);
-  digitalWrite(DP, LOW);
 
   // Set Common Cathodes to High to ensure all digits are off. 
   pinMode(CC1, OUTPUT);
@@ -61,12 +75,12 @@ void SevenSeg::setSegments(int number, int digit, int time)
     // Puts 5V to the anode of the segment if the numbers array shows a 1
     if(numbers[number][seg] == 1)
     {
-		digitalWrite(segments[seg], HIGH);
+		  digitalWrite(segments[seg], HIGH);
     }
     // Puts 0V to the anode of the segment if the numbers array shows a anything BUT 1, i.e. 0
     else
     {
-		digitalWrite(segments[seg], LOW);
+		  digitalWrite(segments[seg], LOW);
     }
   }
 }
