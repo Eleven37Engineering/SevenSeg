@@ -4,6 +4,9 @@ This project is to display characters on a seven segment display in an easy to u
 
 Use for whatever, no need to give credit, contribute if you see a problem.  Donations are a great idea, but we would rather see you develop your own library and evolve the world like we're trying to do.
 
+Defined the font as displayed below.
+![alt tag](https://www.github.com/Eleven37Engineering/SevenSeg/SevenSegAlphaNumeric.jpg)
+
 
 ##Changelog
 0.1.2 - Added support for string input. 
